@@ -1,0 +1,161 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.blogPost {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.postDate {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.logo {
+  height: 200px; /* Large logo */
+  width: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Space between logo and content */
+}
+
+section {
+  width: 80%; /* Adjust the width as needed */
+  max-width: 800px; /* Maximum width */
+  text-align: center; /* Centers the text in the section */
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: initial; /* or any color you prefer */
+  margin-right: 10px; /* Space between icons */
+  font-size: 24px; /* Icon size */
+}
+
+.logo-background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Ensures the logo is behind all content */
+  opacity: 0.1; /* Adjust for desired transparency */
+  max-width: 100%; /* Ensures the logo is responsive */
+  height: auto;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+/* Ensure main content is above the logo */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Add your existing styles */
+#blogPosts {
+  margin: 20px;
+  padding: 10px;
+}
+.blogPost {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.date {
+  font-style: italic;
+  color: #888;
+}
+
+
