@@ -5,6 +5,7 @@ import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import logo from './images/logo.webp';
 import './App.css'; // Make sure your CSS file is correctly imported
 
 const App = () => {
@@ -12,7 +13,7 @@ const App = () => {
     <Router>
       <div className="app-container">
         {/* Global Logo */}
-        <img src={`${process.env.PUBLIC_URL}./logo.png`} alt="Company Logo" className="logo-background" />
+        <img src={logo} alt="Company Logo" />
         
         <Header />
         <Routes>
