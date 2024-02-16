@@ -1,11 +1,11 @@
 import React from 'react';
 import '../App.css';
-import "./logo.webp";
+import logo from "../images/logo.webp";
 
 const Home = () => {
   return <div> 
 <main>
-      <img src="logo.webp" alt="Company Logo" className='logo'></img>
+      <img src={logo} alt="Company Logo" className='logo'></img>
       <section>
           <h1>Welcome me to Ostergren Ideas</h1>
           <p>Innovating the Future with AI</p>

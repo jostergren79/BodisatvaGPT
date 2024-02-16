@@ -1,12 +1,10 @@
-
-
 import React from 'react';
 
 const Footer = () => {
   return (
-    <footer>
-    <p>© 2022 Ostergren Ideas</p>
-</footer>
+    <footer className="footer">
+      <p>© 2024 Ostergren Ideas</p>
+    </footer>
   );
 };
 
