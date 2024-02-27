@@ -1,25 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import BlogPostReaction from '../components/BlogPostReactions'; // Adjust the import path as necessary
+import "../App.css"
 
 const Blog = () => {
-  // Example blog post content
-  const post = {
-    title: "The Future of AI in Everyday Life",
-    date: "February 10, 2024",
-    content: `As we stand on the brink of a technological revolution that will fundamentally alter the way we live, work, and relate to one another, the scale, scope, and complexity of the impact of artificial intelligence (AI) on our everyday lives cannot be understated. From smart homes that predict our preferences and needs, to AI-driven healthcare systems that offer personalized treatment recommendations, the potential for AI to enhance our daily experiences is immense.
+  // Initialize posts as an empty array
+  const [posts, setPosts] = useState([]);
 
-However, with great power comes great responsibility. The ethical considerations and potential for data privacy issues pose significant challenges that must be addressed. As we navigate this exciting yet uncertain future, it is crucial for developers, policymakers, and the public to work together to ensure that AI technologies are implemented in ways that are beneficial and equitable for all.
+  // Example fetching posts (adjust based on your actual data fetching logic)
+  useEffect(() => {
+    const fetchPosts = async () => {
+      // Fetch posts from an API or other source
+      // This is just a placeholder; you'll need to replace it with your actual fetch logic
+      const fetchedPosts = [
+        // Example posts structure
+        { id: 1, title: "Post 1", content: "This is the first post", likes: 0, comments: [] },
+        { id: 2, title: "Post 2", content: "This is the second post", likes: 0, comments: [] }
+      ];
+      setPosts(fetchedPosts);
+    };
 
-In conclusion, the future of AI in everyday life is filled with potential for positive change. By embracing innovation while also safeguarding ethical standards and privacy, we can look forward to a world where AI enhances our daily experiences in meaningful ways.`
-  };
+    fetchPosts();
+  }, []);
 
   return (
-    <div className="blog-container">
-      <div className="blog-content">
-        <h1>{post.title}</h1>
-        <p><em>{post.date}</em></p>
-        <p>{post.content}</p>
-      </div>
+    
+    <div className="blog-post-container">
+      {/* Only attempt to map over posts if it's an array */}
+      {Array.isArray(posts) && posts.map((post) => (
+        <BlogPostReaction key={post.id} post={post} />
+      ))}
     </div>
+    
   );
 };
 

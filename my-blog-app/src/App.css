@@ -7,28 +7,7 @@ body {
   min-height: 100vh;
 }
 
-header {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-}
 
-header nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-header nav ul li {
-  display: inline;
-  margin-right: 20px;
-}
-
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-}
 
 main {
   flex-grow: 1;
@@ -39,11 +18,7 @@ main {
   position: relative;
 }
 
-.logo {
-  height: 200px; /* Large logo */
-  width: auto; /* Maintain aspect ratio */
-  margin-bottom: 20px; /* Space between logo and content */
-}
+
 
 section {
   width: 80%; /* Adjust the width as needed */
@@ -63,15 +38,6 @@ section {
   left: 0; /* Ensure it spans the full width */
 }
 
-/* Header styling */
-header {
-  width: 100%;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px 0; /* Adjust padding as needed */
-  box-sizing: border-box; /* Include padding in the height calculation */
-}
 
 /* Footer styling, matching the header */
 footer {
@@ -123,16 +89,7 @@ body {
 }
 
 
-.logo-background {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1; /* Ensures the logo is behind all content */
-  opacity: 0.1; /* Adjust for desired transparency */
-  max-width: 100%; /* Ensures the logo is responsive */
-  height: auto;
-}
+
 
 body, html {
   height: 100%;
@@ -200,12 +157,20 @@ body, html {
   position: relative;
   width: 100%;
   min-height: 100vh; /* Adjust based on your content */
-  background-image: url('./images/logo.webp'); /* Adjust path accordingly */
+  background-image: url('./images/logoedit1-transformed.webp'); /* Adjust path accordingly */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; /* Cover or contain based on your logo */
-  opacity: 0.3; /* For the logo, adjust if it's too light/dark */
+  opacity: 0.1; /* For the logo, adjust if it's too light/dark */
 }
+
+.blog-post-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Adjust based on your content */
+ 
+}
+
 
 /* Blog Content Styling */
 .blog-content {
@@ -221,4 +186,155 @@ body, html {
 /* Additional Styling for Readability */
 h1, p {
   margin-bottom: 1rem;
+}
+
+.blog-feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog-post {
+  width: 60%; /* Adjust based on your layout */
+  background-color: #f0f2f5;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.blog-post h2, .blog-post h3 {
+  margin: 0 0 10px;
+}
+
+.blog-post p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Add further styling for interaction buttons, etc. */
+
+ /* Blog Post Styles */
+.blog-post {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin: 20px 0;
+  padding: 20px;
+  position: relative;
+}
+
+.blog-post h3 {
+  margin-top: 0;
+}
+
+.like-comment-section {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like-button, .comment-button {
+  cursor: pointer;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.comment-section {
+  display: none;
+}
+
+.comment-section.active {
+  display: block;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.comments-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.comment-item {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+/* Adjusting the footer to match header height */
+.footer {
+  text-align: center;
+  padding: 20px 0; /* Adjust the padding to match the header height */
+  background-color: #f0f0f0;
+}
+
+/* Ensure the footer stays at the bottom */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.main-content {
+  min-height: calc(100vh - 120px); /* Adjust based on header and footer height */
+}
+
+/* Social media icons */
+.social-icons img {
+  width: 50px; /* Larger icons */
+  margin: 0 10px;
+}
+
+/* General adjustments */
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.blog-post {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.blog-post h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: #333;
+}
+
+.blog-post img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px 0;
+}
+
+.blog-post p {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+  color: #666;
+}
+
+.blog-post a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .blog-post {
+    padding: 15px;
+  }
 }

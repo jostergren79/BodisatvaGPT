@@ -1,22 +1,81 @@
 header {
-    background-color: #333;
+    background-color: #4C6651; /* Dark green for forest feel */
     color: white;
     text-align: center;
     padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds depth with a shadow */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
+
+header .logo-container {
+    display: flex;
+    align-items: left;
+}
+
+header .company-name {
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
 
 header nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center; /* Centers the navigation horizontally */
+    align-items: center; /* Aligns items vertically */
 }
 
-header nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
 
 header nav ul li a {
     color: white;
     text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px; /* Slightly rounded corners for a modern look */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    margin: 0 20px;
 }
+
+header nav ul li a:hover, header nav ul li a:focus {
+    background-color: #6B8F71; /* Lighter green on hover/focus for interaction feedback */
+    color: #FFF;
+}
+
+.logo {
+    height: 102px; /* Adjust based on your logo size */
+    margin-left: 10px;
+    font-size: smaller;
+}
+
+.company-name {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    header .logo, header .company-name {
+        font-size: smaller;
+    }
+}
+
