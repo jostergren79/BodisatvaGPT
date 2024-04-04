@@ -1,53 +1,60 @@
-/* App.css */
-.App {
-  text-align: center;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: linear-gradient(180deg, #004d40 0%, #009688 50%, #00bcd4 100%);
+/* Resets some default styles for a consistent look */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root, .App {
+  height: 100%;
+  width: 100%;
   overflow: hidden;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(180deg, #004d40 0%, #009688 50%, #00bcd4 100%);
   position: relative;
+  font-family: 'Press Start 2P', cursive; /* Assuming this font is imported in your HTML or via CSS @import */
 }
 
-.App-header {
-  color: #00BFFF; /* Vibrant blue; adjust as needed */
-  font-size: 2.5rem; /* Slightly reduced for balance */
-  padding: 20px;
-  text-shadow: /* Your 3D text styles here */;
-  font-family: 'Arial', sans-serif; /* Or any specific font you prefer */
+.menu-option {
+  color: #00ff00; /* Neon green */
+  cursor: pointer;
+  margin: 15px 0;
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #ff00ff, 0 0 30px #00ffff;
+  transition: transform 0.2s ease-out;
+  z-index: 10;
 }
 
-.bubble, .fish {
+.menu-option:hover {
+  transform: scale(1.1); /* Slight enlargement on hover */
+}
+
+.background-container {
   position: absolute;
-  will-change: transform;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1; /* Ensures background is behind the menu options */
 }
 
-.bubble {
-  width: 75px; /* Smaller bubbles */
-  height: 75px; /* Keep aspect ratio for bubbles */
-  animation: rise 30s linear infinite;
+.background-element {
+  position: absolute;
+  will-change: transform; /* Optimizes animations */
 }
 
-.fish {
-  width: 200px; /* Smaller fish */
-  height: 200px; /* Maintain aspect ratio for fish */
-  animation: swim 60s linear infinite; /* Adjusted for a slower, more relaxed animation */
+@keyframes bubbleRise {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(-10%); opacity: 0; }
 }
 
-@keyframes rise {
-  to {
-    transform: translateY(-120vh);
-    opacity: 0;
-  }
-}
-
-@keyframes swim {
-
- 
-  to {
-    transform: translateX(-120vw);
-    opacity: 0;
-  }
-  
+@keyframes fishSwim {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }

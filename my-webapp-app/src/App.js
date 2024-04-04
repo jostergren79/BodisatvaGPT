@@ -3,46 +3,47 @@ import './App.css';
 
 function App() {
   useEffect(() => {
+    const backgroundContainer = document.createElement('div');
+    backgroundContainer.className = 'background-container';
+    document.querySelector('.App').appendChild(backgroundContainer);
+
+    // Function to generate bubbles
     const generateBubble = () => {
-      const bubble = document.createElement("img");
-      bubble.src = `${process.env.PUBLIC_URL}/Bubble1.webp`; // Path to your bubble image
-      bubble.className = "bubble";
+      const bubble = document.createElement('img');
+      bubble.src = 'Bubble1.webp'; // Adjust the path as necessary
+      bubble.className = 'background-element';
+      bubble.style.animation = `bubbleRise 25s infinite linear`;
+      bubble.style.bottom = '-5%'; // Start below the viewport
       bubble.style.left = `${Math.random() * 100}%`;
-      bubble.style.bottom = "-50px"; // Start position below viewport
-      // Assign a z-index range for bubbles, ensuring some variability
-      bubble.style.zIndex = Math.floor(Math.random() * 5) + 1; // z-index 1 to 5 for bubbles
-      const animationDuration = `${Math.random() * 5 + 10}s`;
-      bubble.style.animation = `rise ${animationDuration} linear infinite`;
-      document.querySelector(".App").appendChild(bubble);
-      setTimeout(() => bubble.remove(), parseFloat(animationDuration) * 1000);
+      backgroundContainer.appendChild(bubble);
+      setTimeout(() => bubble.remove(), 15000);
     };
 
+    // Function to generate fish
     const generateFish = () => {
-      const fish = document.createElement("img");
-      fish.src = `${process.env.PUBLIC_URL}/Fish1.gif`; // Ensure the correct path
-      fish.className = "fish";
-      fish.style.bottom = `${Math.random() * 50 + 10}vh`;
-      // Ensure the fish starts off-screen to the right; this line may be adjusted or added if missing
-      fish.style.left = `${Math.random() * 100}%`;
-      fish.style.zIndex = Math.floor(Math.random() * 10); // Random z-index for depth
-      const animationDuration = `${Math.random() * 20 + 40}s`;
-      fish.style.animation = `swim ${animationDuration} linear infinite`;
-      document.querySelector(".App").appendChild(fish);
+      const fish = document.createElement('img');
+      fish.src = 'Fish1.gif'; // Adjust the path as necessary
+      fish.className = 'background-element';
+      fish.style.animation = `fishSwim 20s infinite linear`;
+      fish.style.bottom = `${Math.random() * 100}%`;
+      fish.style.left = '-20%'; // Start from the left side
+      backgroundContainer.appendChild(fish);
+      setTimeout(() => fish.remove(), 20000);
     };
-    
 
-    const bubbleInterval = setInterval(generateBubble, 10000);
-    const fishInterval = setInterval(generateFish, 10000);
-
-    return () => {
-      clearInterval(bubbleInterval);
-      clearInterval(fishInterval);
-    };
+    setInterval(generateBubble, 4000);
+    setInterval(generateFish, 10000);
   }, []);
+
+  const handleOptionSelect = (option) => {
+    console.log(`Option selected: ${option}`);
+    // Here, replace with the navigation or functionality for each option
+  };
 
   return (
     <div className="App">
-      {/* <header className="App-header">Coming soon...!</header> */}
+      <div className="menu-option" onClick={() => handleOptionSelect('Register')}>Register</div>
+      <div className="menu-option" onClick={() => handleOptionSelect('Play Game')}>Play Game</div>
     </div>
   );
 }
