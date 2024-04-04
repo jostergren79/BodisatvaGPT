@@ -1,38 +1,53 @@
+/* App.css */
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(180deg, #004d40 0%, #009688 50%, #00bcd4 100%);
+  overflow: hidden;
+  position: relative;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #00BFFF; /* Vibrant blue; adjust as needed */
+  font-size: 2.5rem; /* Slightly reduced for balance */
+  padding: 20px;
+  text-shadow: /* Your 3D text styles here */;
+  font-family: 'Arial', sans-serif; /* Or any specific font you prefer */
 }
 
-.App-link {
-  color: #61dafb;
+.bubble, .fish {
+  position: absolute;
+  will-change: transform;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.bubble {
+  width: 75px; /* Smaller bubbles */
+  height: 75px; /* Keep aspect ratio for bubbles */
+  animation: rise 30s linear infinite;
+}
+
+.fish {
+  width: 200px; /* Smaller fish */
+  height: 200px; /* Maintain aspect ratio for fish */
+  animation: swim 60s linear infinite; /* Adjusted for a slower, more relaxed animation */
+}
+
+@keyframes rise {
   to {
-    transform: rotate(360deg);
+    transform: translateY(-120vh);
+    opacity: 0;
   }
+}
+
+@keyframes swim {
+
+ 
+  to {
+    transform: translateX(-120vw);
+    opacity: 0;
+  }
+  
 }
