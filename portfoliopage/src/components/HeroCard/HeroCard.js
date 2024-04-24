@@ -1,25 +1,20 @@
 import React, { useState } from 'react';
-import './HeroCard.css';  // Make sure the path to the CSS file is correct
+import './HeroCard.css';  // Make sure the CSS path matches
+import image1 from '../../assets/images/image1.png'
 
 function HeroCard() {
-    // Initialize cards with a state
-    const initialCards = Array.from({ length: 20 }, (_, index) => ({
+    // Creating an array of 20 cards with unique ids, random numbers, and flipped states
+    const [cards, setCards] = useState(Array.from({ length: 20 }, (_, index) => ({
         id: index,
         number: Math.floor(Math.random() * 100),
         flipped: false
-    }));
+    })));
 
-    const [cards, setCards] = useState(initialCards);
-
+    // Function to toggle the flipped state of a card
     const toggleFlip = (id) => {
-        // Map through cards and toggle the flip state of the clicked card
-        const updatedCards = cards.map(card => {
-            if (card.id === id) {
-                return { ...card, flipped: !card.flipped };
-            }
-            return card;
-        });
-        setCards(updatedCards);  // Update the state with the new card array
+        setCards(cards.map(card => 
+            card.id === id ? {...card, flipped: !card.flipped} : card
+        ));
     };
 
     return (
@@ -28,7 +23,8 @@ function HeroCard() {
                 <div className="card" key={card.id} onClick={() => toggleFlip(card.id)}>
                     <div className={`card-inner ${card.flipped ? 'is-flipped' : ''}`}>
                         <div className="card-front">
-                            {card.number}
+                            {/* Image placed here to be the only visible content on the card */}
+                            <img src={ image1} alt="Pixelated Me" />
                         </div>
                         <div className="card-back">
                             More info
