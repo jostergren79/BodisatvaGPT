@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Importing a pixelated font */
+
+.header {
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #000; /* Dark background for contrast */
+  color: #FFD700; /* Gold color for that epic video game title feel */
+  font-family: 'Press Start 2P', cursive; /* Font that resembles video game text */
+  font-size: 2em;
+  text-shadow: 1px 1px 0px #fff, 2px 2px 0px #000; /* Sharp text shadow for 3D effect */
+  box-shadow: inset 0 -10px 10px -10px #333; /* Subtle inner shadow for depth */
+}
