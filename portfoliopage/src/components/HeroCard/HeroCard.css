@@ -1,18 +1,29 @@
 .HeroCard {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: 20vw;
-    gap: 10px;
-    padding: 20px;
-    margin: auto;
-    max-width: 100vw;
-    width: 90vw;
+    grid-template-columns: repeat(5, 1fr); /* Maintain 5 columns */
+    grid-auto-rows: minmax(120px, 1fr); /* Minimum row height with flexibility */
+    gap: 10px; /* Space between cards */
+    padding: 50px; /* Padding around the entire grid */
+    margin: auto; /* Center the grid horizontally */
+    width: 100vw; /* Utilize full viewport width */
+    max-width: 1000px; /* Maximum width to ensure cards are not too stretched */
+    justify-content: center; /* Center cards within the grid if there's extra space */
+
+  
+   
+
+    
 }
 
 .card {
+    background-color: rgb(3, 58, 3);
     perspective: 1000px;
     border-radius: 10px;
     overflow: hidden;
+    height: calc((100vh - 40px) / 4 - 10px); /* Dynamically calculate card height */
+    width: calc((100vw - 40px) / 5 - 10px); /* Dynamically calculate card width */
+    border: 2px solid gold; /* Gold border around each card */
+    cursor: pointer;
 }
 
 .card-inner {
@@ -35,23 +46,27 @@
 }
 
 .card-front {
-    background-color: transparent; /* Make the background transparent */
-}
-
-.card-front img {
-    width: calc(100% - 12px); /* Subtract border width */
-    height: calc(100% - 12px); /* Subtract border height */
-    object-fit: cover;
-    border: 6px solid black; /* 6px black border */
+    background-color: rgb(3, 58, 3);
+    color: gold; /* Gold color for the text */
+    font-family: 'Press Start 2P', cursive; /* Font that resembles video game text */
+    font-size: 2em;
+    transform: rotate(-45deg); /* Rotate text diagonally */
+    text-align: center;
 }
 
 .card-back {
-    background-color: #6a0dad; /* Maintaining the previous style for the back */
-    transform: rotateY(180deg);
-    color: white; /* Ensure text color is visible if needed */
-    font-size: 1em; /* Adjust font size as needed */
+    background-color: rgb(3, 58, 3);
+    transform: rotateY(180deg); /* Ensures back is initially hidden */
+}
+
+.card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid gold; /* Gold border around the animal images */
 }
 
 .is-flipped {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* Flip effect */
 }
+
